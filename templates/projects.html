@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+<div>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+</div>
+
+<div id="div_payroll_table">
+  <table id="payroll_table" cellspacing="0" cellpadding="0" class="display"> 
+  <thead>
+      <tr>
+        <th>Project ID</th>
+        <th>Project Name</th>
+      </tr>
+  </thead>
+  <tbody>
+
+  {% for prj in projects %}
+        <tr>            
+        <td >{{prj['id']}}</td>
+        <td class="lalign">{{prj['name']}}</td>
+        </tr>
+  {% else %}
+    <tr><td>NO DATA!!!!</td></tr>
+  {% endfor %}
+
+  </tbody>
+  </table>
+</div>
+
+{% endblock %}

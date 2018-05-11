@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block body %}
+<div>
+  {% if error %}<p class=error><strong>Error:</strong> {{ error }}{% endif %}
+</div>
+
+<div id="div_payroll_table">
+  <table id="payroll_table" cellspacing="0" cellpadding="0" class="display"> 
+  <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+  </thead>
+  <tbody>
+
+  {% for ws in workspaces %}
+        <tr>            
+        <td >{{ws['id']}}</td>
+        <td class="lalign">{{ws['name']}}</td>
+        </tr>
+  {% else %}
+    <tr><td>NO DATA!!!!</td></tr>
+  {% endfor %}
+
+  </tbody>
+  </table>
+</div>
+
+{% endblock %}
