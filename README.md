@@ -5,7 +5,7 @@
 ## Dependencies
 - Pyhton3.
 - Flask: `pip install flask`.
-- Apply Asana key: look at Personal Access Tokens in the [Asana API guide](https://asana.com/guide/help/api/api).
+- Apply Asana key: look at Personal Access Tokens part in the [Asana API guide](https://asana.com/guide/help/api/api).
 
 ## Run
 - Dowload the repo. `git clone https://github.com/mdalai/sync-asana-sharepoints.git`.
