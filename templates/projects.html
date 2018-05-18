@@ -10,14 +10,28 @@
       <tr>
         <th>Project ID</th>
         <th>Project Name</th>
+        <th>Total</th>
+        <th>Completed</th>
+        <th>Percentage</th>
+        <th>Click to refresh</th>
       </tr>
   </thead>
   <tbody>
 
   {% for prj in projects %}
-        <tr>            
-        <td >{{prj['id']}}</td>
-        <td class="lalign">{{prj['name']}}</td>
+        <tr id="{{prj[0]}}">            
+          <!-- <td >{{prj['id']}}</td>
+          <td class="lalign">{{prj['name']}}</td>  -->
+          <td> {{prj[0]}}</td>
+          <td> {{prj[1]}}</td>
+          <td> {{prj[2]}}</td>
+          <td> {{prj[3]}}</td>
+        {% if prj[2] == 0 %} 
+          <td> None </td>
+        {% else %}
+          <td> {{ ((prj[3]/prj[2])|round(2))*100 }}%</td>
+        {% endif %}
+          <td><button id="btn-{{prj[0]}}">Pull</button></td>
         </tr>
   {% else %}
     <tr><td>NO DATA!!!!</td></tr>
